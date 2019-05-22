@@ -3,11 +3,11 @@ describe('flatten array', function () {
     var arr = [1, 2, [1, 2, [3, 4, 5, [1]]], 2, [2]],
         expected = [1, 1, 1, 2, 2, 2, 2, 3, 4, 5];
 
-    let res = []
+    var res = []
 
-    const recursiveFunc = (data) => {
+    const recursiveFunc = function(data){
         if(Array.isArray(data)){
-          for(let i=0; i<data.length; i++){
+          for(var i=0; i<data.length; i++){
             if(Array.isArray(data[i])){
               recursiveFunc(data[i])
             }else{
@@ -19,7 +19,7 @@ describe('flatten array', function () {
         }
     } 
     
-    for(let i=0; i<arr.length; i++){
+    for(var i=0; i<arr.length; i++){
       recursiveFunc(arr[i])
     }
 
